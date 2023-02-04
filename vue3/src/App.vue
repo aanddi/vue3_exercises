@@ -3,8 +3,7 @@ export default {
   name: 'App',
   data() {
     return {
-      arr: ['x', 'y', 'z'],
-      arr1: [1, 2, 3],
+      obj: {x: 1, y: 2, z: 3},
     }
   }
 }
@@ -12,13 +11,7 @@ export default {
 
 <template>
   <!-------------- №1 -----------------> <br><hr><br>
-  <p class="box"> {{ arr[0] }} </p>
-  <p class="box"> {{ arr[1] }} </p>
-  <p class="box"> {{ arr[2] }} </p>
-
-  <!-------------- №2 -----------------> <br><hr><br>
-  <p class="box"> {{ arr1[0] + arr1[1] + arr1[2] }} </p>
-
+  <div class="box"> {{obj.x + obj.y + obj.z}} </div>
 
 </template>
 
@@ -29,7 +22,7 @@ body {
 }
 
 .box {
-  background-color: #d39b00;
+  background-color: #fc251e;
   display: inline-block;
   padding: 20px 60px;
   border-radius: 40px;
