@@ -1,39 +1,26 @@
 <script>
 export default {
   name: 'App',
+  data() {
+    return {
+      name: 'Andrey',
+      lastname: 'Kuropatkin',
+      age: 19,
+    }
+  }
 }
 </script>
 
 <template>
-  <div class="wrapper">
-    <div class="box">
-      <h3 class="title">Title</h3>
-      <p class="sub-title">
-        Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
-        Грустный его за вопрос прямо, заголовок раз моей переписали продолжил.
-        Над парадигматическая рукописи до грустный предупреждал последний свою то залетают!
-      </p>
-    </div>
-    <div class="box">
-      <h3 class="title">Title</h3>
-      <p class="sub-title">
-        Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
-        Грустный его за вопрос прямо, заголовок раз моей переписали продолжил.
-        Над парадигматическая рукописи до грустный предупреждал последний свою то залетают!
-      </p>
-    </div>
-    <div class="box">
-      <h3 class="title">Title</h3>
-      <p class="sub-title">
-        Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
-        Грустный его за вопрос прямо, заголовок раз моей переписали продолжил.
-        Над парадигматическая рукописи до грустный предупреждал последний свою то залетают!
-      </p>
-    </div>
-  </div>
+
+  <div class="box">{{ name }}</div>
+  <div class="box">{{ lastname }}</div>
+  <div class="box">{{ age }}</div>
+  
 </template>
 
 <style>
+
 body {
   margin: 30px;
   font-family: Arial, Helvetica, sans-serif;
@@ -44,7 +31,7 @@ body {
 }
 
 .box {
-  width: 300px;
+  display: inline-block;
   border: 1px solid black;
   border-radius: 30px;
   color: #fff;
@@ -58,12 +45,4 @@ body {
   color: #000;
 }
 
-.title {
-  font-size: 30px;
-  text-align: center;
-}
-
-.sub-title {
-  text-align: justify;
-}
 </style>
