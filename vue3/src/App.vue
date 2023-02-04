@@ -16,7 +16,10 @@ export default {
 <template>
 
   <!-------------- №1 -----------------> <br><hr><br>
-  {{ date() }}
+  <button @click="date" class="link">Нажми, чтобы узнать текущую дату</button>
+
+  <!-------------- №2 -----------------> <br><hr><br>
+  <button @mouseover="date" class="link">Наведи, чтобы узнать текущую дату</button>
 
 </template>
 
@@ -29,10 +32,9 @@ body {
 .box {
   background-color: #fc251e;
   display: inline-block;
-  padding: 20px 60px;
+  padding: 10px 40px;
   border-radius: 40px;
   font-weight: bold;
-  margin: 30px;
 }
 
 
@@ -40,7 +42,7 @@ body {
   background: red;
   font-weight: bold;
   font-size: 20px;
-  padding: 20px 50px;
+  padding: 20px 30px;
   border-radius: 40px;
   transition: all 0.3s ease-out;
 }
