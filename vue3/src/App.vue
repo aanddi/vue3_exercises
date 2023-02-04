@@ -3,19 +3,22 @@ export default {
   name: 'App',
   data() {
     return {
-      num: 5,
-      num1: 1,
-      num2: 2,
-      num3: 3,
+      arr: ['x', 'y', 'z'],
+      arr1: [1, 2, 3],
     }
   }
 }
 </script>
 
 <template>
+  <!-------------- №1 -----------------> <br><hr><br>
+  <p class="box"> {{ arr[0] }} </p>
+  <p class="box"> {{ arr[1] }} </p>
+  <p class="box"> {{ arr[2] }} </p>
 
-  <div class="box"> Квадрат числа num(5) равен {{ num * num }} </div>
-  <div class="box"> Сумма чисел num1(1), num2(2), num3(3)  равна {{ num1 + num2 + num3 }} </div>
+  <!-------------- №2 -----------------> <br><hr><br>
+  <p class="box"> {{ arr1[0] + arr1[1] + arr1[2] }} </p>
+
 
 </template>
 
