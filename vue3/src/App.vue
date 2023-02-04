@@ -1,47 +1,69 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script>
+export default {
+  name: 'App',
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="wrapper">
+    <div class="box">
+      <h3 class="title">Title</h3>
+      <p class="sub-title">
+        Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
+        Грустный его за вопрос прямо, заголовок раз моей переписали продолжил.
+        Над парадигматическая рукописи до грустный предупреждал последний свою то залетают!
+      </p>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <div class="box">
+      <h3 class="title">Title</h3>
+      <p class="sub-title">
+        Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
+        Грустный его за вопрос прямо, заголовок раз моей переписали продолжил.
+        Над парадигматическая рукописи до грустный предупреждал последний свою то залетают!
+      </p>
+    </div>
+    <div class="box">
+      <h3 class="title">Title</h3>
+      <p class="sub-title">
+        Далеко-далеко за словесными, горами в стране гласных и согласных живут рыбные тексты.
+        Грустный его за вопрос прямо, заголовок раз моей переписали продолжил.
+        Над парадигматическая рукописи до грустный предупреждал последний свою то залетают!
+      </p>
+    </div>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<style>
+body {
+  margin: 30px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.wrapper {
+  display: flex;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.box {
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 30px;
+  color: #fff;
+  background-color: #000;
+  padding: 30px;
+  margin: 10px
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.box:hover {
+  background-color: #fff;
+  color: #000;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.title {
+  font-size: 30px;
+  text-align: center;
+}
+
+.sub-title {
+  text-align: justify;
 }
 </style>
