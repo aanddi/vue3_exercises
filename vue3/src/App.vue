@@ -3,15 +3,20 @@ export default {
   name: 'App',
   data() {
     return {
-      obj: {x: 1, y: 2, z: 3},
     }
-  }
+  },
+  methods: {
+		date: function() {
+      alert(new Date().toLocaleDateString())
+    }
+	}
 }
 </script>
 
 <template>
+
   <!-------------- №1 -----------------> <br><hr><br>
-  <div class="box"> {{obj.x + obj.y + obj.z}} </div>
+  {{ date() }}
 
 </template>
 
@@ -30,7 +35,7 @@ body {
   margin: 30px;
 }
 
-/*
+
 .link {
   background: red;
   font-weight: bold;
@@ -44,5 +49,5 @@ body {
   background-color: #000;
   color: red;
 }
-*/
+
 </style>
