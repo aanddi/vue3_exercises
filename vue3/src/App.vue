@@ -3,8 +3,10 @@ export default {
   name: 'App',
   data() {
     return {
-      text: 'page',
-      href: 'page.html',
+      num: 5,
+      num1: 1,
+      num2: 2,
+      num3: 3,
     }
   }
 }
@@ -12,17 +14,27 @@ export default {
 
 <template>
 
-<a :href="href" class="link"> {{ text }} </a>
+  <div class="box"> Квадрат числа num(5) равен {{ num * num }} </div>
+  <div class="box"> Сумма чисел num1(1), num2(2), num3(3)  равна {{ num1 + num2 + num3 }} </div>
 
 </template>
 
 <style>
-
 body {
   margin: 60px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.box {
+  background-color: #d39b00;
+  display: inline-block;
+  padding: 20px 60px;
+  border-radius: 40px;
+  font-weight: bold;
+  margin: 30px;
+}
+
+/*
 .link {
   background: red;
   font-weight: bold;
@@ -36,5 +48,5 @@ body {
   background-color: #000;
   color: red;
 }
-
+*/
 </style>
