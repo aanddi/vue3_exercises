@@ -3,9 +3,8 @@ export default {
   name: 'App',
   data() {
     return {
-      name: 'Andrey',
-      lastname: 'Kuropatkin',
-      age: 19,
+      text: 'page',
+      href: 'page.html',
     }
   }
 }
@@ -13,36 +12,29 @@ export default {
 
 <template>
 
-  <div class="box">{{ name }}</div>
-  <div class="box">{{ lastname }}</div>
-  <div class="box">{{ age }}</div>
-  
+<a :href="href" class="link"> {{ text }} </a>
+
 </template>
 
 <style>
 
 body {
-  margin: 30px;
+  margin: 60px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.wrapper {
-  display: flex;
+.link {
+  background: red;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 50px;
+  border-radius: 40px;
+  transition: all 0.3s ease-out;
 }
 
-.box {
-  display: inline-block;
-  border: 1px solid black;
-  border-radius: 30px;
-  color: #fff;
+.link:hover {
   background-color: #000;
-  padding: 30px;
-  margin: 10px
-}
-
-.box:hover {
-  background-color: #fff;
-  color: #000;
+  color: red;
 }
 
 </style>
