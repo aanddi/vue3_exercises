@@ -3,32 +3,43 @@ export default {
   name: 'App',
   data() {
     return {
-      date: 3,
+      num: 0,
     }
   },
   methods: {
 
-    getDate: function () {
-      let days = [' ', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-      return days[this.date];
+    getNumber: function (num) {
+      this.num  = prompt(num);
+      return this.num;
     },
 
-    showDay: function () {
-      let day = this.getDate(this.date);
-      alert (day);
-    }
+    showNumber: function () {
+      return this.num;
+    },
+
+    square: function() {
+      return alert(this.num ** 2);
+    },
+
+    cube: function () {
+      return alert(this.num ** 3);
+    },
 
   }
 }
 </script>
 
 <template>
-  
-{{  showDay() }}
+
+<div class="box">Число: {{ getNumber() }}</div>
+
+<button @click="square" class="link">Возведение {{ showNumber() }} в квадрат</button>
+<button @click="cube" class="link">Возведение {{ showNumber() }} в куб</button>
 
 </template>
 
 <style>
+
 body {
   margin: 60px;
   font-family: Arial, Helvetica, sans-serif;
@@ -40,6 +51,7 @@ body {
   padding: 10px 40px;
   border-radius: 40px;
   font-weight: bold;
+  margin: 20px;
 }
 
 
@@ -50,6 +62,7 @@ body {
   padding: 20px 30px;
   border-radius: 40px;
   transition: all 0.3s ease-out;
+  margin: 20px;
 }
 
 .link:hover {
