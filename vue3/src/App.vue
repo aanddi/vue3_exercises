@@ -3,6 +3,7 @@ export default {
   name: 'App',
   data() {
     return {
+      visible: true,
     }
   },
 
@@ -10,16 +11,21 @@ export default {
    
   },
   methods: {
-    btn: function () {
-      alert("Hello world!");
-    }
+
   }
 }
 </script>
 
 <template>
-<a class="link" href="https://code.mu/ru/javascript/framework/vue/book/prime/basis/events-modifiers/" onclick="event.preventDefault()">Link</a>
-<button class="link" @click.once="btn">Button</button>
+
+<p class="box" v-if="visible">
+  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Обеспечивает переписали запятых свою имени журчит рыбными то своих семантика безорфографичный что коварных запятой буквоград строчка над, большого залетают. Журчит.
+</p>
+
+<p class="box" v-if="!visible">
+  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Обеспечивает переписали запятых свою имени журчит рыбными то своих семантика безорфографичный что коварных запятой буквоград строчка над, большого залетают. Журчит.
+</p>
+
 </template>
 
 <style>
@@ -42,5 +48,13 @@ body {
 .link:hover {
   background-color: #b60046;
   color: #0e0101;
+}
+
+.box {
+  width: 500px;
+  padding: 20px;
+  border: 1px solid #000;
+  margin: 10px;
+
 }
 </style>
