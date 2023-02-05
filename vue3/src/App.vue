@@ -3,23 +3,20 @@ export default {
   name: 'App',
   data() {
     return {
+      user: 'Andrey Kuropatkin'
     }
   },
   methods: {
-		date: function() {
-      alert(new Date().toLocaleDateString())
+    show: function () {
+      alert(this.user);
     }
-	}
+  }
 }
 </script>
 
 <template>
 
-  <!-------------- №1 -----------------> <br><hr><br>
-  <button @click="date" class="link">Нажми, чтобы узнать текущую дату</button>
-
-  <!-------------- №2 -----------------> <br><hr><br>
-  <button @mouseover="date" class="link">Наведи, чтобы узнать текущую дату</button>
+ {{ show() }}
 
 </template>
 
@@ -51,5 +48,4 @@ body {
   background-color: #000;
   color: red;
 }
-
 </style>
