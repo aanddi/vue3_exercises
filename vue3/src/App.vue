@@ -3,20 +3,28 @@ export default {
   name: 'App',
   data() {
     return {
-      user: 'Andrey Kuropatkin'
+      date: 3,
     }
   },
   methods: {
-    show: function () {
-      alert(this.user);
+
+    getDate: function () {
+      let days = [' ', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+      return days[this.date];
+    },
+
+    showDay: function () {
+      let day = this.getDate(this.date);
+      alert (day);
     }
+
   }
 }
 </script>
 
 <template>
-
- {{ show() }}
+  
+{{  showDay() }}
 
 </template>
 
