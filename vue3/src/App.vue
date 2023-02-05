@@ -3,38 +3,41 @@ export default {
   name: 'App',
   data() {
     return {
-      num: 0,
+      text: 'Абзац',
     }
   },
   methods: {
 
-    getNumber: function (num) {
-      this.num  = prompt(num);
-      return this.num;
+    task2: function () {
+      this.text = 'Параграф';
     },
 
-    showNumber: function () {
-      return this.num;
+    task3: function () {
+      this.text = 'Текст';
     },
 
-    square: function() {
-      return alert(this.num ** 2);
-    },
-
-    cube: function () {
-      return alert(this.num ** 3);
-    },
-
+    task4: function () {
+      this.text = 'Заголовок';
+    }
   }
 }
 </script>
 
 <template>
 
-<div class="box">Число: {{ getNumber() }}</div>
+<p class="box-red">
+  <span> {{ text }} </span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet qui ea repellendus ex, nihil quos sapiente dolores expedita assumenda ipsa blanditiis est magnam animi aut, in mollitia vitae repudiandae tempore!
+  Lorem ipsum  sit amet consectetur adipisicing elit. Amet qui ea repellendus ex, nihil quos sapiente dolores expedita assumenda ipsa blanditiis est magnam animi aut, in mollitia vitae repudiandae tempore!
+</p>
 
-<button @click="square" class="link">Возведение {{ showNumber() }} в квадрат</button>
-<button @click="cube" class="link">Возведение {{ showNumber() }} в куб</button>
+<p class="box-blue">
+  <span> {{ text }} </span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet qui ea repellendus ex, nihil quos sapiente dolores expedita assumenda ipsa blanditiis est magnam animi aut, in mollitia vitae repudiandae tempore!
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet qui ea repellendus ex, nihil quos sapiente dolores expedita assumenda ipsa blanditiis est magnam animi aut, in mollitia vitae repudiandae tempore!
+</p>
+
+<button class="link" @click="task2">Изменить свойство</button>
+<button class="link" @click="task3">Изменить свойство</button>
+<button class="link" @click="task4">Изменить свойство</button>
 
 </template>
 
@@ -45,7 +48,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.box {
+.box-red {
   background-color: #fc251e;
   display: inline-block;
   padding: 10px 40px;
@@ -54,19 +57,38 @@ body {
   margin: 20px;
 }
 
+.box-blue {
+  background-color: #1e22fc;
+  display: inline-block;
+  padding: 10px 40px;
+  border-radius: 40px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+span {
+  color: #30c702;
+  background: #000;
+  font-size: 15px;
+  padding: 4px 10px;
+  margin-right: 3px;
+  border-radius: 40px;
+}
+
 
 .link {
-  background: red;
+  color: #30c702;
+  background: #000;
   font-weight: bold;
   font-size: 20px;
-  padding: 20px 30px;
+  padding: 10px 40px;
   border-radius: 40px;
   transition: all 0.3s ease-out;
   margin: 20px;
 }
 
 .link:hover {
-  background-color: #000;
-  color: red;
+  background-color: #b60046;
+  color: #0e0101;
 }
 </style>
