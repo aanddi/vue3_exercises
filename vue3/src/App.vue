@@ -6,10 +6,8 @@ export default {
       visible: true,
     }
   },
-
   computed: {
   },
-
   methods: {
     btn: function () {
       this.visible = !this.visible;
@@ -20,7 +18,7 @@ export default {
 
 <template>
 
-  <div class="wrapper" v-if="visible">
+  <div class="wrapper" v-show="visible">
     <p class="box">
       Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал
       ведущими, образ дал букв пор рукописи то буквенных своих путь всемогущая, проектах грамматики переулка
@@ -45,7 +43,6 @@ export default {
 body {
   margin: 30px;
 }
-
 .link {
   color: #050505;
   background: #02bd02;
@@ -57,12 +54,10 @@ body {
   margin: 20px;
   display: block;
 }
-
 .link:hover {
   background-color: #b60046;
   color: #0e0101;
 }
-
 .box {
   width: 300px;
   padding: 20px 10px;
@@ -74,13 +69,11 @@ body {
   justify-content: center;
   flex-direction: row;
 }
-
 .wrapper {
   padding: 20px 30px;
   border: 1px solid #000;
   display: flex;
   width: 1000px;
   background: #2dec07;
-
 }
 </style>
