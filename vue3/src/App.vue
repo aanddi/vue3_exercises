@@ -3,47 +3,34 @@ export default {
   name: 'App',
   data() {
     return {
-      visible1: true,
-      visible2: true,
-      visible3: true,
+      isAdmin: true,
     }
   },
 
   computed: {
+
   },
 
   methods: {
-    toggle1: function () {
-      this.visible1 = !this.visible1;
-    },
-    toggle2: function () {
-      this.visible2 = !this.visible2;
-    },
-    toggle3: function () {
-      this.visible3 = !this.visible3;
+    log: function () {
+      this.isAdmin = !this.isAdmin;
     }
-
   }
 }
 </script>
 
 <template>
 
-  <p class="box">
-    {{ visible1? 'Далеко-далеко за словесными горами': 'Обеспечивает переписали запятых свою имени журчит' }}
-  </p>
-  <button class="link" @click="toggle1">Кнопка</button>
+  <button class="link" @click="log">{{ isAdmin ? 'Выйти' : 'Войти' }}</button>
 
-  <p class="box">
-    {{ visible2? 'Далеко-далеко за словесными горами': 'Обеспечивает переписали запятых свою имени журчит' }}
+  <p class="box" v-if="isAdmin">
+    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+    Реторический маленький дал, повстречался лучше агентство толку рукопись? Всемогущая сих, одна курсивных свою
+    возвращайся вопроса ведущими дал. Большого, дороге все.
   </p>
-  <button class="link" @click="toggle2">Кнопка</button>
 
-  <p class="box">
-    {{ visible3? 'Далеко-далеко за словесными горами': 'Обеспечивает переписали запятых свою имени журчит' }}
-  </p>
-  <button class="link" @click="toggle3">Кнопка</button>
-
+  <p class="box" v-else>Войдите в свою учетную запись</p>
+  
 </template>
 
 <style>
