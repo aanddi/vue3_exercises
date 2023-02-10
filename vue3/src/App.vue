@@ -3,7 +3,7 @@ export default {
   name: 'App',
   data() {
     return {
-      age: prompt('Введите свой возвраст')
+      visible: true,
     }
   },
 
@@ -11,15 +11,33 @@ export default {
   },
 
   methods: {
+    btn: function () {
+      this.visible = !this.visible;
+    }
   }
 }
 </script>
 
 <template>
 
-  <div class="box" v-if="age < 18">Подросток</div>
-  <div class="box" v-else-if="19 < age && age < 25">Молодой человек</div>
-  <div class="box" v-else-if="age > 26">Мужчина</div>
+  <div class="wrapper" v-if="visible">
+    <p class="box">
+      Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал
+      ведущими, образ дал букв пор рукописи то буквенных своих путь всемогущая, проектах грамматики переулка
+      реторический курсивных текстами власти.
+    </p>
+    <p class="box">
+      Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал
+      ведущими, образ дал букв пор рукописи то буквенных своих путь всемогущая, проектах грамматики переулка
+      реторический курсивных текстами власти.
+    </p>
+    <p class="box">
+      Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал
+      ведущими, образ дал букв пор рукописи то буквенных своих путь всемогущая, проектах грамматики переулка
+      реторический курсивных текстами власти.
+    </p>
+  </div>
+  <button class="link" @click="btn">{{ visible ? 'Скрыть' : 'Показать' }}</button>
 
 </template>
 
@@ -49,10 +67,20 @@ body {
   width: 300px;
   padding: 20px 10px;
   border: 1px solid #000;
+  background-color: #fff;
   margin: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
+}
+
+.wrapper {
+  padding: 20px 30px;
+  border: 1px solid #000;
+  display: flex;
+  width: 1000px;
+  background: #2dec07;
 
 }
 </style>
