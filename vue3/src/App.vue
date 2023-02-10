@@ -3,34 +3,28 @@ export default {
   name: 'App',
   data() {
     return {
-      isAdmin: true,
+      day: new Date().getDay(),
     }
   },
 
   computed: {
-
   },
 
   methods: {
-    log: function () {
-      this.isAdmin = !this.isAdmin;
-    }
   }
 }
 </script>
 
 <template>
 
-  <button class="link" @click="log">{{ isAdmin ? 'Выйти' : 'Войти' }}</button>
+  <p class="box" v-if="day == '1'">Понедельник</p>
+  <p class="box" v-if="day == '2'">Вторник</p>
+  <p class="box" v-if="day == '3'">Среда</p>
+  <p class="box" v-if="day == '4'">Четверг</p>
+  <p class="box" v-if="day == '5'">Пятница</p>
+  <p class="box" v-if="day == '6'">Суббота</p>
+  <p class="box" v-if="day == '7'">Воскресенье</p>
 
-  <p class="box" v-if="isAdmin">
-    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
-    Реторический маленький дал, повстречался лучше агентство толку рукопись? Всемогущая сих, одна курсивных свою
-    возвращайся вопроса ведущими дал. Большого, дороге все.
-  </p>
-
-  <p class="box" v-else>Войдите в свою учетную запись</p>
-  
 </template>
 
 <style>
@@ -56,10 +50,13 @@ body {
 }
 
 .box {
-  width: 500px;
-  padding: 20px;
+  width: 300px;
+  padding: 20px 10px;
   border: 1px solid #000;
   margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 </style>
