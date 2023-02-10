@@ -14,13 +14,13 @@ export default {
 
   methods: {
     toggle1: function () {
-      this.visible1 =  !this.visible1;
+      this.visible1 = !this.visible1;
     },
     toggle2: function () {
-      this.visible2=  !this.visible2;
+      this.visible2 = !this.visible2;
     },
     toggle3: function () {
-      this.visible3 =  !this.visible3;
+      this.visible3 = !this.visible3;
     }
 
   }
@@ -29,26 +29,24 @@ export default {
 
 <template>
 
-<p class="box" v-if="visible1">
-  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Обеспечивает переписали запятых свою имени журчит рыбными то своих семантика безорфографичный что коварных запятой буквоград строчка над, большого залетают. Журчит.
-</p>
-<button class="link" @click="toggle1">{{visible1}}</button>
+  <p class="box">
+    {{ visible1? 'Далеко-далеко за словесными горами': 'Обеспечивает переписали запятых свою имени журчит' }}
+  </p>
+  <button class="link" @click="toggle1">Кнопка</button>
 
-<p class="box" v-if="visible2">
-  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Обеспечивает переписали запятых свою имени журчит рыбными то своих семантика безорфографичный что коварных запятой буквоград строчка над, большого залетают. Журчит.
-</p>
-<button class="link" @click="toggle2">{{visible2}}</button>
+  <p class="box">
+    {{ visible2? 'Далеко-далеко за словесными горами': 'Обеспечивает переписали запятых свою имени журчит' }}
+  </p>
+  <button class="link" @click="toggle2">Кнопка</button>
 
-<p class="box" v-if="visible3">
-  Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Обеспечивает переписали запятых свою имени журчит рыбными то своих семантика безорфографичный что коварных запятой буквоград строчка над, большого залетают. Журчит.
-</p>
-<button class="link" @click="toggle3">{{visible3}}</button>
-
+  <p class="box">
+    {{ visible3? 'Далеко-далеко за словесными горами': 'Обеспечивает переписали запятых свою имени журчит' }}
+  </p>
+  <button class="link" @click="toggle3">Кнопка</button>
 
 </template>
 
 <style>
-
 body {
   margin: 30px;
 }
