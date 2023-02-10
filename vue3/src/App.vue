@@ -3,7 +3,7 @@ export default {
   name: 'App',
   data() {
     return {
-      day: new Date().getDay(),
+      age: prompt('Введите свой возвраст')
     }
   },
 
@@ -17,13 +17,9 @@ export default {
 
 <template>
 
-  <p class="box" v-if="day == '1'">Понедельник</p>
-  <p class="box" v-if="day == '2'">Вторник</p>
-  <p class="box" v-if="day == '3'">Среда</p>
-  <p class="box" v-if="day == '4'">Четверг</p>
-  <p class="box" v-if="day == '5'">Пятница</p>
-  <p class="box" v-if="day == '6'">Суббота</p>
-  <p class="box" v-if="day == '7'">Воскресенье</p>
+  <div class="box" v-if="age < 18">Подросток</div>
+  <div class="box" v-else-if="19 < age && age < 25">Молодой человек</div>
+  <div class="box" v-else-if="age > 26">Мужчина</div>
 
 </template>
 
