@@ -3,11 +3,13 @@ export default {
   name: 'App',
   data() {
     return {
-      base: {
-        user1: '100$',
-        user2: '200$',
-        user3: '300$',
-      }
+      menu: {
+        Главная: '#',
+        Продукция: '#',
+        Контакты: '#',
+        Галлерея: '#',
+      },
+      items: [1, 2, 3, 4, 5],
     }
   },
   computed: {
@@ -20,55 +22,100 @@ export default {
 
 <template>
 
-<ul class="box">
-  <li v-for="elem in base">{{elem}}</li>
-</ul>
+  <nav>
+    <ul class="menu_item">
+      <li class="menu-list" v-for="(elem, key) in menu">
+        <a :href="elem" class="menu-link active">{{ key }}</a>
+      </li>
+    </ul>
+  </nav>
 
-<br>
+  <div class="wrapper">
+    <div v-for="elem in items">
+      <div class="box">
+        <h1>{{ elem }}</h1>
+        <p>
+          Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Деревни которой
+          реторический
+          злых ipsum, дорогу то. Прямо, несколько знаках грустный переулка то маленький жаренные страну дороге решила
+          правилами вдали?
+        </p>
+      </div>
+    </div>
+  </div>
 
-<ul class="box">
-  <li v-for="(key, elem) in base"> {{ elem }} - {{ key }}</li>
-</ul>
-
-<br>
-
-<ul class="box">
-  <li v-for="(key, elem, index) in base"> {{ elem }} - {{ key }} - {{index + 1}}</li>
-</ul>
+  <div class="wrapper">
+    <div v-for="elem in items">
+      <div class="box">
+        <h1>{{ elem }}</h1>
+        <p>
+          Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Деревни которой
+          реторический
+          злых ipsum, дорогу то. Прямо, несколько знаках грустный переулка то маленький жаренные страну дороге решила
+          правилами вдали?
+        </p>
+      </div>
+    </div>
+  </div>
 
 </template>
 
 <style>
-body {
-  margin: 30px;
+nav {
+  margin-top: 20px;
 }
 
-.link {
-  color: #050505;
-  background: #02bd02;
+.menu_item {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-list {
+  list-style: none;
+  margin-right: 10px;
   font-weight: bold;
-  font-size: 20px;
-  padding: 10px 40px;
-  border-radius: 40px;
-  transition: all 0.3s ease-out;
-  margin: 20px;
-  display: block;
 }
 
-.link:hover {
-  background-color: #b60046;
-  color: #0e0101;
+.menu-link {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #16A177;
+  border: 1px solid #16A177;
+  padding: 10px 25px;
+  transition: all 0.4s ease-out;
+  border-radius: 10px;
+}
+
+.menu-link:hover {
+  background-color: #fff;
+  border: 1px solid #16A177;
+  color: #16A177;
 }
 
 .box {
   width: 300px;
-  padding: 20px 10px;
+  padding: 20px 20px;
   border: 1px solid #000;
   background-color: #fff;
   margin: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
+  text-align: justify;
+  transition: all 0.4s ease-out;
+
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.box:hover {
+  background-color: #16A177;
+  color: #fff;
+  border: 1px solid #fff;
 }
 </style>
