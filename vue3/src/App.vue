@@ -3,13 +3,29 @@ export default {
   name: 'App',
   data() {
     return {
-      menu: {
-        Главная: '#',
-        Продукция: '#',
-        Контакты: '#',
-        Галлерея: '#',
-      },
-      items: [1, 2, 3, 4, 5],
+      hrefs: [
+        { href: '1.html', text: 'text1' },
+        { href: '2.html', text: 'text2' },
+        { href: '3.html', text: 'text3' },
+      ],
+
+      products: [
+        {
+          name: 'product1',
+          price: 100,
+          quantity: 5
+        },
+        {
+          name: 'product2',
+          price: 200,
+          quantity: 4
+        },
+        {
+          name: 'product3',
+          price: 300,
+          quantity: 3
+        },
+      ]
     }
   },
   computed: {
@@ -24,39 +40,19 @@ export default {
 
   <nav>
     <ul class="menu_item">
-      <li class="menu-list" v-for="(elem, key) in menu">
-        <a :href="elem" class="menu-link active">{{ key }}</a>
+      <li class="menu-list" v-for="elem in hrefs">
+        <a :href="elem.href" class="menu-link">{{ elem.text }}</a>
       </li>
     </ul>
   </nav>
 
-  <div class="wrapper">
-    <div v-for="elem in items">
-      <div class="box">
-        <h1>{{ elem }}</h1>
-        <p>
-          Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Деревни которой
-          реторический
-          злых ipsum, дорогу то. Прямо, несколько знаках грустный переулка то маленький жаренные страну дороге решила
-          правилами вдали?
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrapper">
-    <div v-for="elem in items">
-      <div class="box">
-        <h1>{{ elem }}</h1>
-        <p>
-          Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Деревни которой
-          реторический
-          злых ipsum, дорогу то. Прямо, несколько знаках грустный переулка то маленький жаренные страну дороге решила
-          правилами вдали?
-        </p>
-      </div>
-    </div>
-  </div>
+  <table>
+    <tr v-for="elem in products">
+      <td>{{ elem.name }}</td>
+      <td>{{ elem.price }}</td>
+      <td>{{ elem.quantity }}</td>
+    </tr>
+  </table>
 
 </template>
 
@@ -92,30 +88,23 @@ nav {
   color: #16A177;
 }
 
-.box {
-  width: 300px;
-  padding: 20px 20px;
+tr,
+td,
+th {
   border: 1px solid #000;
-  background-color: #fff;
-  margin: 10px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: justify;
-  transition: all 0.4s ease-out;
-
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+table {
+  width: 50%;
+  text-align: center;
   margin-top: 50px;
 }
 
-.box:hover {
-  background-color: #16A177;
-  color: #fff;
-  border: 1px solid #fff;
+th {
+  padding: 10px;
+}
+
+td {
+  padding: 5px 7px;
 }
 </style>
