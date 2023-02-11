@@ -1,75 +1,77 @@
 <script>
 export default {
-  name: 'App',
   data() {
     return {
-      products: [
-        {
-          id: 2,
-          name: 'product1',
-        },
-
-        {
-          id: 3,
-          name: 'product2',
-        },
-
-        {
-          id: 1,
-          name: 'product3',
-        },
-      ]
+      titles: ['Заголовок1', 'Заголовок2', 'Заголовок3'],
     }
   },
-  computed: {
-  },
   methods: {
-
+    add: function () {
+      this.titles.push('Заголовок');
+    },
+    del: function () {
+      this.titles.shift();
+    },
+    del1: function () {
+      this.titles.pop();
+    },
+    splice: function () {
+      this.titles.splice(2, 1);
+    },
+    sort: function () {
+      this.titles.sort();
+    },
+    reverse: function () {
+      this.titles.reverse();
+    },
   }
 }
 </script>
 
 <template>
-
-  <nav>
-    <ul class="menu_item">
-      <li class="menu-list" v-for="elem in products" :key="products.id">
-        <a href="#" class="menu-link active">{{ elem.name }}</a>
-      </li>
+  <div class="wrapper">
+    <ul class="styled">
+      <li v-for="elem in titles" class="box">{{ elem }}</li>
     </ul>
-  </nav>
+    <button class="link" @click="add">Добавить заголовок</button>
+    <button class="link" @click="del">Удалить заголовок первый пункт</button>
+    <button class="link" @click="del1">Удалить заголовок последний пункт</button>
+    <button class="link" @click="splice">Удалить заголовок предпоследний пункт</button>
+    <button class="link" @click="sort">Отсортировать</button>
+    <button class="link" @click="reverse">Выставить в обратном порядке</button>
+  </div>
 
 </template>
 
 <style>
-nav {
-  margin-top: 40px;
+.wrapper {
+  text-align: center;
+  margin: 0 auto;
+  width: 400px;
 }
 
-.menu_item {
-  display: flex;
-  justify-content: center;
-}
-
-.menu-list {
-  list-style: none;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.menu-link {
-  text-decoration: none;
+.link {
   color: #ffffff;
-  background-color: #16A177;
-  border: 1px solid #16A177;
-  padding: 10px 25px;
-  transition: all 0.4s ease-out;
-  border-radius: 10px;
+  background: #02bd02;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 5px 20px;
+  transition: all 0.3s ease-out;
+  margin-top: 20px;
+  width: 100%;
 }
 
-.menu-link:hover {
+.link:hover {
+  background-color: #b60046;
+  color: #0e0101;
+}
+
+.box {
+  width: 300px;
+  padding: 20px 10px;
+  border: 1px solid #000;
   background-color: #fff;
-  border: 1px solid #16A177;
-  color: #16A177;
+  margin: 10px auto;
+  width: 100%;
 }
 </style>
