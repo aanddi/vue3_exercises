@@ -2,76 +2,61 @@
 export default {
   data() {
     return {
-      titles: ['Заголовок1', 'Заголовок2', 'Заголовок3'],
+
     }
   },
   methods: {
-    add: function () {
-      this.titles.push('Заголовок');
-    },
-    del: function () {
-      this.titles.shift();
-    },
-    del1: function () {
-      this.titles.pop();
-    },
-    splice: function () {
-      this.titles.splice(2, 1);
-    },
-    sort: function () {
-      this.titles.sort();
-    },
-    reverse: function () {
-      this.titles.reverse();
-    },
+
   }
 }
 </script>
 
 <template>
   <div class="wrapper">
-    <ul class="styled">
-      <li v-for="elem in titles" class="box">{{ elem }}</li>
-    </ul>
-    <button class="link" @click="add">Добавить заголовок</button>
-    <button class="link" @click="del">Удалить заголовок первый пункт</button>
-    <button class="link" @click="del1">Удалить заголовок последний пункт</button>
-    <button class="link" @click="splice">Удалить заголовок предпоследний пункт</button>
-    <button class="link" @click="sort">Отсортировать</button>
-    <button class="link" @click="reverse">Выставить в обратном порядке</button>
+    <h1 class="title">Andrey Kuropatkin</h1>
+
   </div>
+  <div class="block">
+    <img
+      src="https://camo.githubusercontent.com/1bf26edd9b7797ce93e3127ccc2c113de3383d2f12900e7e8662d077b292a200/68747470733a2f2f63646e2e666973686b692e6e65742f75706c6f61642f706f73742f323032312f30332f30392f333635303634392f362d31372e676966"
+      alt="">
+  </div>
+
 
 </template>
 
 <style>
-.wrapper {
-  text-align: center;
+body {
+  background-color: #000;
+}
+
+.block {
+  width: 800px;
   margin: 0 auto;
-  width: 400px;
+  padding-top: 50px;
 }
 
-.link {
-  color: #ffffff;
-  background: #02bd02;
-  font-weight: bold;
-  font-size: 20px;
-  padding: 5px 20px;
-  transition: all 0.3s ease-out;
-  margin-top: 20px;
-  width: 100%;
+img {
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+
 }
 
-.link:hover {
-  background-color: #b60046;
-  color: #0e0101;
+.title {
+  text-align: center;
+  font-size: 30px;
+  background-color: #f3970c;
+  margin-top: 100px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 55px  rgba(246, 11, 0, 0.55);
+  font-family: arial;
+  padding: 10px 5px;
 }
 
-.box {
+.wrapper {
   width: 300px;
-  padding: 20px 10px;
-  border: 1px solid #000;
-  background-color: #fff;
-  margin: 10px auto;
-  width: 100%;
+  margin: 0 auto;
 }
+
 </style>
