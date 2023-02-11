@@ -3,6 +3,7 @@ export default {
   name: 'App',
   data() {
     return {
+      items: [1, -2, 3, -4, 5],
     }
   },
   computed: {
@@ -14,18 +15,14 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper">
-    <div class="box" v-for="num in 30">
-      <h1 class="title">{{ num }}</h1>
-      <p>
-        Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Журчит ты реторический
-        строчка безорфографичный скатился взгляд заголовок лучше встретил алфавит букв, до предупредила о, подпоясал над
-        которое если щеке.
-      </p>
-    </div>
-  </div>
 
-
+  <template v-for="elem in items">
+    <nav>
+      <ul v-if="elem > 0">
+        <li class="box">{{ elem }}</li>
+      </ul>
+    </nav>
+  </template>
 
 </template>
 
@@ -40,16 +37,5 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.wrapper {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-}
-
-.title {
-  font-weight: bold;
-  font-size: 30px;
 }
 </style>
