@@ -3,7 +3,11 @@ export default {
   name: 'App',
   data() {
     return {
-      items: [1, 2, 3, 4, 5],
+      base: {
+        user1: '100$',
+        user2: '200$',
+        user3: '300$',
+      }
     }
   },
   computed: {
@@ -16,9 +20,21 @@ export default {
 
 <template>
 
-  <ul>
-    <li v-for="(elem1, key) in items">{{ key }}</li>
-  </ul>
+<ul class="box">
+  <li v-for="elem in base">{{elem}}</li>
+</ul>
+
+<br>
+
+<ul class="box">
+  <li v-for="(key, elem) in base"> {{ elem }} - {{ key }}</li>
+</ul>
+
+<br>
+
+<ul class="box">
+  <li v-for="(key, elem, index) in base"> {{ elem }} - {{ key }} - {{index + 1}}</li>
+</ul>
 
 </template>
 
@@ -53,7 +69,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
 }
-
 </style>
