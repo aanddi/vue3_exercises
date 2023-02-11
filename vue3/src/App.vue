@@ -16,16 +16,9 @@ export default {
 
 <template>
 
-  <div class="box" v-for="elem in items">{{ elem }}</div>
-  <br>
-
-  <div class="box" v-for="elem1 in items">{{ elem1**2 }}</div>
-  <br>
-
   <ul>
-    <li v-for="elem2 in items">{{ elem2 }}</li>
+    <li v-for="(elem1, key) in items">{{ key }}</li>
   </ul>
-
 
 </template>
 
