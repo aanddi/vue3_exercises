@@ -3,39 +3,29 @@ export default {
   name: 'App',
   data() {
     return {
-      visible: true,
+      items: [1, 2, 3, 4, 5],
     }
   },
   computed: {
   },
   methods: {
-    btn: function () {
-      this.visible = !this.visible;
-    }
+
   }
 }
 </script>
 
 <template>
 
-  <div class="wrapper" v-show="visible">
-    <p class="box">
-      Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал
-      ведущими, образ дал букв пор рукописи то буквенных своих путь всемогущая, проектах грамматики переулка
-      реторический курсивных текстами власти.
-    </p>
-    <p class="box">
-      Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал
-      ведущими, образ дал букв пор рукописи то буквенных своих путь всемогущая, проектах грамматики переулка
-      реторический курсивных текстами власти.
-    </p>
-    <p class="box">
-      Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал
-      ведущими, образ дал букв пор рукописи то буквенных своих путь всемогущая, проектах грамматики переулка
-      реторический курсивных текстами власти.
-    </p>
-  </div>
-  <button class="link" @click="btn">{{ visible ? 'Скрыть' : 'Показать' }}</button>
+  <div class="box" v-for="elem in items">{{ elem }}</div>
+  <br>
+
+  <div class="box" v-for="elem1 in items">{{ elem1**2 }}</div>
+  <br>
+
+  <ul>
+    <li v-for="elem2 in items">{{ elem2 }}</li>
+  </ul>
+
 
 </template>
 
@@ -43,6 +33,7 @@ export default {
 body {
   margin: 30px;
 }
+
 .link {
   color: #050505;
   background: #02bd02;
@@ -54,10 +45,12 @@ body {
   margin: 20px;
   display: block;
 }
+
 .link:hover {
   background-color: #b60046;
   color: #0e0101;
 }
+
 .box {
   width: 300px;
   padding: 20px 10px;
@@ -69,11 +62,5 @@ body {
   justify-content: center;
   flex-direction: row;
 }
-.wrapper {
-  padding: 20px 30px;
-  border: 1px solid #000;
-  display: flex;
-  width: 1000px;
-  background: #2dec07;
-}
+
 </style>
