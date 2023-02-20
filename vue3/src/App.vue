@@ -2,7 +2,8 @@
 export default {
   data() {
     return {
-
+      isValid: true,
+      isDisabled: false,
     }
   },
   methods: {
@@ -12,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <p :class="{active: true, valid: false, block: true}">
+  <p :class="{ active: isValid, valid: isDisabled, block: isValid }">
     Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вопроса заголовок, он рукопись
     маленький за предупредила журчит путь образ сбить лучше! Текст реторический, большой она жаренные lorem напоивший от
     всех.
@@ -44,5 +45,4 @@ export default {
 .active {
   display: block;
 }
-
 </style>
