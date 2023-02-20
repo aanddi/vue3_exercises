@@ -13,7 +13,13 @@ export default {
 </script>
 
 <template>
-  <p :class="{ active: isValid, valid: isDisabled, block: isValid }">
+  <p :class="{block: isValid, color: isValid, bg: isValid}">
+    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вопроса заголовок, он рукопись
+    маленький за предупредила журчит путь образ сбить лучше! Текст реторический, большой она жаренные lorem напоивший от
+    всех.
+  </p>
+
+  <p :class="{block: isValid, bold: isValid, cursive: isValid }">
     Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вопроса заголовок, он рукопись
     маленький за предупредила журчит путь образ сбить лучше! Текст реторический, большой она жаренные lorem напоивший от
     всех.
@@ -29,20 +35,13 @@ export default {
   text-align: justify;
 }
 
-.red {
-  background-color: red;
-  color: #fff;
+.color.bg {
+  color: green;
+  background-color: yellow;
 }
 
-.btn {
-  background-color: #d80808;
-  color: #fff;
-  padding: 15px;
-  margin-left: 100px;
-  border-radius: 10px;
-}
-
-.active {
-  display: block;
+.bold.cursive {
+  font-weight: bold;
+  font-style: italic;
 }
 </style>
