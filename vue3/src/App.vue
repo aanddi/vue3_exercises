@@ -2,28 +2,11 @@
 export default {
   data() {
     return {
-      arr: ["Русский", "Английский", "Китайский"],
-      visible1: false,
-      visible2: false,
-      visible3: false,
+      selected: '',
     }
   },
   methods: {
-    check1() {
-      this.visible1 = true;
-      this.visible2 = false;
-      this.visible3 = false;
-    },
-    check2() {
-      this.visible1 = false;
-      this.visible2 = true;
-      this.visible3 = false;
-    },
-    check3() {
-      this.visible1 = false;
-      this.visible2 = false;
-      this.visible3 = true;
-    },
+
   }
 }
 </script>
@@ -31,27 +14,13 @@ export default {
 <template>
   <div class="wrapper">
     <div class="block">
-      <div class="item">
-        <input type="radio" name="radio" @click="check1">
-        <label>Русский</label>
-      </div>
-      <div class="item">
-        <input type="radio" name="radio" @click="check2">
-        <label>Английский</label>
-      </div>
-      <div class="item">
-        <input type="radio" name="radio" @click="check3">
-        <label>Китайский</label>
-      </div>
-      <p v-if="visible1">
-        Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты.
-      </p>
-      <p v-if="visible2">
-        Far, far beyond verbal mountains, in the land of vowels and consonants, fish texts live.
-      </p>
-      <p v-if="visible3">
-        遠在語言山脈之外，在元音和輔音的土地上，魚類文本生活著。
-      </p>
+      <select v-model="selected">
+        <option>value1</option>
+        <option>value2</option>
+        <option>value3</option>
+      </select>
+
+      <p>{{ selected }}</p>
     </div>
   </div>
 </template>
@@ -84,9 +53,14 @@ label {
   border-radius: 10px;
 }
 
+select {
+  border: 1px solid black;
+}
+
 p {
   margin-top: 10px;
 }
+
 .btn {
   background-color: #fd0606;
   padding: 10px;
