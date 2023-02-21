@@ -2,9 +2,28 @@
 export default {
   data() {
     return {
-      check: [],
-
+      arr: ["Русский", "Английский", "Китайский"],
+      visible1: false,
+      visible2: false,
+      visible3: false,
     }
+  },
+  methods: {
+    check1() {
+      this.visible1 = true;
+      this.visible2 = false;
+      this.visible3 = false;
+    },
+    check2() {
+      this.visible1 = false;
+      this.visible2 = true;
+      this.visible3 = false;
+    },
+    check3() {
+      this.visible1 = false;
+      this.visible2 = false;
+      this.visible3 = true;
+    },
   }
 }
 </script>
@@ -13,24 +32,26 @@ export default {
   <div class="wrapper">
     <div class="block">
       <div class="item">
-        <input type="checkbox" v-model="check" name="1" value="Русский">
-        <label for="1">Русский</label>
+        <input type="radio" name="radio" @click="check1">
+        <label>Русский</label>
       </div>
       <div class="item">
-        <input type="checkbox" v-model="check" name="2" value="Английский">
-        <label for="2">Английский</label>
+        <input type="radio" name="radio" @click="check2">
+        <label>Английский</label>
       </div>
       <div class="item">
-        <input type="checkbox" v-model="check" name="3" value="Китайский">
-        <label for="3">Китайский</label>
+        <input type="radio" name="radio" @click="check3">
+        <label>Китайский</label>
       </div>
-      <div class="item">
-        <input type="checkbox" v-model="check" name="4" value="Татарский">
-        <label for="4">Татарский</label>
-      </div>
-    <ul>
-      <li v-for="(l, v) in check">{{v}}) {{l}}</li>
-    </ul>
+      <p v-if="visible1">
+        Далеко-далеко за словесными горами, в стране гласных и согласных живут рыбные тексты.
+      </p>
+      <p v-if="visible2">
+        Far, far beyond verbal mountains, in the land of vowels and consonants, fish texts live.
+      </p>
+      <p v-if="visible3">
+        遠在語言山脈之外，在元音和輔音的土地上，魚類文本生活著。
+      </p>
     </div>
   </div>
 </template>
@@ -39,6 +60,7 @@ export default {
 .wrapper {
   display: flex;
 }
+
 label {
   margin-left: 6px;
 }
@@ -54,10 +76,6 @@ label {
   flex-direction: column;
 }
 
-ul {
-  margin-top: 10px;
-}
-
 .block_input {
   width: 200px;
   margin: 10px 10px;
@@ -66,6 +84,9 @@ ul {
   border-radius: 10px;
 }
 
+p {
+  margin-top: 10px;
+}
 .btn {
   background-color: #fd0606;
   padding: 10px;
@@ -80,6 +101,4 @@ ul {
   color: #fd0606;
   border: 1px solid #fd0606;
 }
-
-
 </style>
