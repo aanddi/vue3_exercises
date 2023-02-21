@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      check: true,
+      check: [],
 
     }
   }
@@ -12,8 +12,25 @@ export default {
 <template>
   <div class="wrapper">
     <div class="block">
-      <input type="checkbox" v-model="check">
-      <p v-if="check">Андрей Куропаткин</p>
+      <div class="item">
+        <input type="checkbox" v-model="check" name="1" value="Русский">
+        <label for="1">Русский</label>
+      </div>
+      <div class="item">
+        <input type="checkbox" v-model="check" name="2" value="Английский">
+        <label for="2">Английский</label>
+      </div>
+      <div class="item">
+        <input type="checkbox" v-model="check" name="3" value="Китайский">
+        <label for="3">Китайский</label>
+      </div>
+      <div class="item">
+        <input type="checkbox" v-model="check" name="4" value="Татарский">
+        <label for="4">Татарский</label>
+      </div>
+    <ul>
+      <li v-for="(l, v) in check">{{v}}) {{l}}</li>
+    </ul>
     </div>
   </div>
 </template>
@@ -21,6 +38,9 @@ export default {
 <style>
 .wrapper {
   display: flex;
+}
+label {
+  margin-left: 6px;
 }
 
 .block {
@@ -32,7 +52,10 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+}
+
+ul {
+  margin-top: 10px;
 }
 
 .block_input {
