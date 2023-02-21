@@ -2,69 +2,32 @@
 export default {
   data() {
     return {
-      num: 0,
-      num1: 0,
-      num2: 0,
-      result: 0,
-      result1: 0,
-      text1: 'hello',
-      text2: 'world',
-      fullName: '',
-      name: '',
-      surname: '',
-      patronymic: '',
+      text: [],
+      text1: '',
+      text2: '',
     }
   },
   methods: {
     calc: function () {
-      this.result = this.num ** 2
+      this.text = this.text2.split(' ');
     },
-    calc1: function () {
-      this.result1 = Number(this.num1) + Number(this.num2);
-    },
-
-    calc2: function () {
-      const a = this.text1;
-      this.text1 = this.text2;
-      this.text2 = a;
-    },
-    user: function () {
-      const user = this.fullName.split(' ');
-      this.surname = user[0];
-      this.name = user[1];
-      this.patronymic = user[2];
     },
   }
-}
 </script>
 
 <template>
   <div class="wrapper">
     <div class="block">
-      <p>{{ result }}</p>
-      <input class="block_input" v-model="num">
-      <button class="btn" @click="calc">Посчитать квадрат</button>
+      <textarea name="text1" id="" cols="25" rows="7" v-model="text1"></textarea>
+      <p>{{ text1 }}</p>
     </div>
 
     <div class="block">
-      <p>{{ result1 }}</p>
-      <input class="block_input" v-model="num1">
-      <input class="block_input" v-model="num2">
-      <button class="btn" @click="calc1">Посчитать сумму</button>
-    </div>
-
-    <div class="block">
-      <input class="block_input" v-model="text1">
-      <input class="block_input" v-model="text2">
-      <button class="btn" @click="calc2">Поменять</button>
-    </div>
-
-    <div class="block">
-      <input class="block_input" v-model="fullName">
-      <p><span>Фамилия: </span>{{ surname }}</p>
-      <p><span>Имя: </span>{{ name }}</p>
-      <p><span>Отчество: </span>{{ patronymic }}</p>
-      <button class="btn" @click="user">Кнопка</button>
+      <textarea name="text1" id="" cols="25" rows="7" v-model="text2"></textarea>
+      <button class="btn" @click="calc">Список</button>
+      <ul>
+        <li v-for="(paragraph, value) in text">{{value}}) {{paragraph}}</li>
+      </ul>
     </div>
   </div>
 </template>
@@ -72,11 +35,10 @@ export default {
 <style>
 .wrapper {
   display: flex;
-  justify-content: space-around;
 }
 .block {
   border: 1px solid black;
-  padding: 20px;
+  padding: 30px 30px;
   width: 300px;
   margin: 20px 30px;
   text-align: justify;
@@ -107,6 +69,11 @@ export default {
   background-color: #fff;
   color: #fd0606;
   border: 1px solid #fd0606;
+}
+
+textarea {
+  border: 1px solid black;
+  padding: 0px 10px;
 }
 
 p {
