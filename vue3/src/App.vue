@@ -2,32 +2,18 @@
 export default {
   data() {
     return {
-      text: [],
-      text1: '',
-      text2: '',
+      check: true,
+
     }
-  },
-  methods: {
-    calc: function () {
-      this.text = this.text2.split(' ');
-    },
-    },
   }
+}
 </script>
 
 <template>
   <div class="wrapper">
     <div class="block">
-      <textarea name="text1" id="" cols="25" rows="7" v-model="text1"></textarea>
-      <p>{{ text1 }}</p>
-    </div>
-
-    <div class="block">
-      <textarea name="text1" id="" cols="25" rows="7" v-model="text2"></textarea>
-      <button class="btn" @click="calc">Список</button>
-      <ul>
-        <li v-for="(paragraph, value) in text">{{value}}) {{paragraph}}</li>
-      </ul>
+      <input type="checkbox" v-model="check">
+      <p v-if="check">Андрей Куропаткин</p>
     </div>
   </div>
 </template>
@@ -36,6 +22,7 @@ export default {
 .wrapper {
   display: flex;
 }
+
 .block {
   border: 1px solid black;
   padding: 30px 30px;
@@ -71,18 +58,5 @@ export default {
   border: 1px solid #fd0606;
 }
 
-textarea {
-  border: 1px solid black;
-  padding: 0px 10px;
-}
 
-p {
-  color: #fd0606;
-  padding: 5px;
-}
-
-span {
-  color: #000;
-  font-weight: bold;
-}
 </style>
