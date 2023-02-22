@@ -2,61 +2,33 @@
 export default {
   data() {
     return {
-      text1: "text",
-      text2: "text2",
-      none: false,
+      newItem: '',
+      items: ['a', 'b', 'c', 'd', 'e'],
     }
   },
   methods: {
-    submit: function () {
-      this.text1 = this.$refs.textField.value;
+    addFirstItem: function () {
+     this.items.unshift(this.newItem);
     },
-    ctrl: function (event) {
-      if (event.ctrlKey) {
-        this.none = true;
-      }
-    },
-    right: function (event) {
-      if (!event.ctrlKey) {
-        this.text2 = 'right';
-      }
-    },
-    left: function (event) {
-      if (!event.ctrlKey) {
-        this.text2 = 'left';
-      }
-    },
-    middle: function (event) {
-      if (!event.ctrlKey) {
-        this.text2 = 'middle';
-      }
-    },
+    addlastItem: function () {
+     this.items.push(this.newItem);
+    }
   }
 }
 </script>
 
 <template>
-  <input type="text" @keyup.enter="submit" class="block_input" ref="textField" />
-  <p class="block">{{ text1 }}</p>
-
-  <br>
-
-  <a href="#" class="btn" @click="ctrl">link</a>
-  <p class="block" v-if="none">{{ text2 }}</p>
-
-  <br>
-
-  <a href="#" class="btn" @click.right="right" @click.left="left" @click.middle="middle">link</a>
-  <p class="block">{{ text2 }}</p>
+  <ul>
+    <li v-for="(item, index) in items" :key="index">
+      {{ item }}
+    </li>
+  </ul>
+  <input v-model="newItem" class="block_input">
+  <button @click="addFirstItem" class="btn">add first</button>
+  <button @click="addlastItem" class="btn">add last</button>
 </template>
 
 <style>
-.wrapper {}
-
-label {
-  margin-left: 6px;
-}
-
 .block {
   border: 1px solid black;
   padding: 30px 30px;
@@ -86,12 +58,16 @@ label {
   border-radius: 20px;
   border: 1px solid #fd0606;
   transition: all 0.4s ease-out;
-  margin: 20px 20px;
+  margin: 20px 10px;
 }
 
 .btn:hover {
   background-color: #fff;
   color: #fd0606;
   border: 1px solid #fd0606;
+}
+
+ul {
+  margin-left: 20px;
 }
 </style>
