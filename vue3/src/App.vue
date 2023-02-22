@@ -2,37 +2,56 @@
 export default {
   data() {
     return {
-      isDisabled: true,
-      isDisabled1: true,
-      checked: false,
+      text1: "text",
+      text2: "text2",
+      none: false,
     }
   },
   methods: {
-    toggle: function () {
-      this.isDisabled = false;
+    submit: function () {
+      this.text1 = this.$refs.textField.value;
     },
-    toggle1: function () {
-      this.isDisabled1 = false;
+    ctrl: function (event) {
+      if (event.ctrlKey) {
+        this.none = true;
+      }
+    },
+    right: function (event) {
+      if (!event.ctrlKey) {
+        this.text2 = 'right';
+      }
+    },
+    left: function (event) {
+      if (!event.ctrlKey) {
+        this.text2 = 'left';
+      }
+    },
+    middle: function (event) {
+      if (!event.ctrlKey) {
+        this.text2 = 'middle';
+      }
     },
   }
 }
 </script>
 
 <template>
-  <div class="wrapper">
-    <input type="text" class="block_input" placeholder="andrey" v-bind:disabled="isDisabled">
-    <button class="btn" @click="toggle">btn</button>
+  <input type="text" @keyup.enter="submit" class="block_input" ref="textField" />
+  <p class="block">{{ text1 }}</p>
 
-    <input type="text" class="block_input" placeholder="kuropatkin" v-bind:disabled="isDisabled1">
-    <input type="checkbox" class="block_input " v-model="checked" @click="toggle1">
-    <button class="btn" @click="toggle">btn</button> 
-  </div>
+  <br>
+
+  <a href="#" class="btn" @click="ctrl">link</a>
+  <p class="block" v-if="none">{{ text2 }}</p>
+
+  <br>
+
+  <a href="#" class="btn" @click.right="right" @click.left="left" @click.middle="middle">link</a>
+  <p class="block">{{ text2 }}</p>
 </template>
 
 <style>
-.wrapper {
-  
-}
+.wrapper {}
 
 label {
   margin-left: 6px;
@@ -42,7 +61,7 @@ label {
   border: 1px solid black;
   padding: 30px 30px;
   width: 300px;
-  margin: 20px 30px;
+  margin: 20px 10px;
   text-align: justify;
   display: flex;
   justify-content: center;
@@ -59,13 +78,15 @@ label {
 }
 
 .btn {
+  display: block;
+  width: 200px;
+  text-align: center;
   background-color: #fd0606;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 10px 40px;
+  border-radius: 20px;
   border: 1px solid #fd0606;
   transition: all 0.4s ease-out;
-  margin-top: 10px;
-  display: block;
+  margin: 20px 20px;
 }
 
 .btn:hover {
