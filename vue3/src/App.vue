@@ -2,16 +2,12 @@
 export default {
   data() {
     return {
-      newItem: '',
-      items: ['a', 'b', 'c', 'd', 'e'],
+      arr: ['a', 'b', 'c', 'd']
     }
   },
   methods: {
-    addFirstItem: function () {
-     this.items.unshift(this.newItem);
-    },
-    addlastItem: function () {
-     this.items.push(this.newItem);
+    removeItem: function (index)  {
+      this.arr.splice(index, 1)
     }
   }
 }
@@ -19,13 +15,12 @@ export default {
 
 <template>
   <ul>
-    <li v-for="(item, index) in items" :key="index">
+    <li class="block" @click="removeItem(index)" v-for="(item, index) in arr" :key="index">
       {{ item }}
     </li>
   </ul>
-  <input v-model="newItem" class="block_input">
-  <button @click="addFirstItem" class="btn">add first</button>
-  <button @click="addlastItem" class="btn">add last</button>
+
+ 
 </template>
 
 <style>
@@ -38,6 +33,11 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.block:hover{
+  background-color: #000;
+  color: #fff;
 }
 
 .block_input {
