@@ -9,13 +9,14 @@ export default {
       name: 'Andrey',
 		  surn: 'Kuropatkin',
       age: 19,
+      bool: true,
     }
   }
 }
 </script>
 
 <template>
-  <Employee :name="name" :surn="surn" :age="age"/>
+  <Employee :name="name" :surn="surn" :age="age" :bool="bool"/>
 </template>
 
 

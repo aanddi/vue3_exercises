@@ -1,6 +1,11 @@
 <script>
 export default {
-    props: ['name', 'surn', 'age'],
+    props: {
+      name: String,
+      surn: String,
+      age: Number,
+      bool: Boolean
+    },
     data() {
         return {
         }
@@ -13,6 +18,7 @@ export default {
   <h1>{{name}}</h1>
   <h1>{{surn}}</h1>
   <h1>{{age}}</h1>
+  <h1>{{bool}}</h1>
 </div>
 </template>
 
