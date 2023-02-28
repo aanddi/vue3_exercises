@@ -10,10 +10,10 @@ export default {
   },
   methods: {
     showApp1: function () {
-      this.$emit('show1', 12);
+      this.$emit('show1', 'Пётр');
     },
     showApp2: function () {
-      this.$emit('show2', 11);
+      this.$emit('show2', 'Пётр', '20.000р');
     }
   }
 }
