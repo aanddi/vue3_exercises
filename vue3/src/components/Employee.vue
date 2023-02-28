@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: ['arg'],
+    props: ['name', 'surn', 'age'],
     data() {
         return {
         }
@@ -9,9 +9,11 @@ export default {
 </script>
 
 <template>
-<ul class="block">
-    <li v-for="item in arg">{{ item }}</li>
-</ul>
+<div class="block">
+  <h1>{{name}}</h1>
+  <h1>{{surn}}</h1>
+  <h1>{{age}}</h1>
+</div>
 </template>
 
 
