@@ -1,9 +1,10 @@
 <script>
 
 export default {
+  props: ['name', 'surn', 'age'],
   data() {
     return {
-      name: 'Andrey'
+
     }
   },
   methods: {
@@ -13,6 +14,8 @@ export default {
 
 <template>
 {{ name }}
+{{ surn }}
+{{ age }}
 </template>
 
 
