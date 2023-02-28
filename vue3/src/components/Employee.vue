@@ -1,12 +1,9 @@
 <script>
-import Employee from './components/Employee.vue'
-export default {
-  components: {
-    Employee
 
-		},
+export default {
   data() {
     return {
+      name: 'Andrey'
     }
   },
   methods: {
@@ -15,7 +12,7 @@ export default {
 </script>
 
 <template>
-    <Employee />
+{{ name }}
 </template>
 
 
