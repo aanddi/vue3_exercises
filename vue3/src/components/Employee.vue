@@ -1,24 +1,25 @@
 <script>
-
 export default {
-  props: ['name', 'surn', 'age'],
-  data() {
-    return {
-
+    props: ['arg'],
+    data() {
+        return {
+        }
     }
-  },
-  methods: {
-  }
 }
 </script>
 
 <template>
-{{ name }}
-{{ surn }}
-{{ age }}
+<ul class="block">
+    <li v-for="item in arg">{{ item }}</li>
+</ul>
 </template>
 
 
 <style>
-
+.block {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 50px;
+  width: 300px;
+}
 </style>
