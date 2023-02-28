@@ -9,11 +9,11 @@ export default {
 
    } },
   methods: {
-    one: function (name) {
-      document.write(name)
+    one: function () {
+      document.write('Hello 1')
     },
-    two: function (name, salary) {
-      document.write(name + '  ' + salary)
+    two: function () {
+      document.write('Hello 2')
     }
   }
 

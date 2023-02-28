@@ -8,22 +8,15 @@ export default {
     return {
     }
   },
-  methods: {
-    showApp1: function () {
-      this.$emit('show1', 'Пётр');
-    },
-    showApp2: function () {
-      this.$emit('show2', 'Пётр', '20.000р');
-    }
-  }
+  
 }
 
 </script>
 
 <template>
   <div class="blocl">
-    <button class="btn" @click="showApp1">One</button>
-    <button class="btn" @click="showApp2">Two</button>
+    <button class="btn" @click="$emit('show1')">One</button>
+    <button class="btn" @click="$emit('show2')">Two</button>
   </div>
 </template>
 
