@@ -1,25 +1,23 @@
 <script>
 export default {
-    props: {
-      name: String,
-      surn: String,
-      age: Number,
-      bool: Boolean
-    },
-    data() {
-        return {
-        }
+  props: {
+    name: String,
+    salary: Number,
+    age: Number
+  },
+  data() {
+    return {
     }
+  }
 }
 </script>
 
 <template>
-<div class="block">
-  <h1>{{name}}</h1>
-  <h1>{{surn}}</h1>
-  <h1>{{age}}</h1>
-  <h1>{{bool}}</h1>
-</div>
+  <div class="block">
+    <h1>{{ name }}</h1>
+    <h1>{{ salary }}</h1>
+    <h1>{{ age }}</h1>
+  </div>
 </template>
 
 
