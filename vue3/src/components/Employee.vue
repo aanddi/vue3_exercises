@@ -1,22 +1,29 @@
 <script>
 export default {
   props: {
-    name: String,
-    salary: Number,
-    age: Number
+    show1: Number,
+    show2: Number,
   },
   data() {
     return {
     }
+  },
+  methods: {
+    showApp1: function () {
+      this.$emit('show1', 12);
+    },
+    showApp2: function () {
+      this.$emit('show2', 11);
+    }
   }
 }
+
 </script>
 
 <template>
-  <div class="block">
-    <h1>{{ name }}</h1>
-    <h1>{{ salary }}</h1>
-    <h1>{{ age }}</h1>
+  <div class="blocl">
+    <button class="btn" @click="showApp1">One</button>
+    <button class="btn" @click="showApp2">Two</button>
   </div>
 </template>
 
@@ -27,5 +34,20 @@ export default {
   padding: 20px;
   margin: 50px;
   width: 300px;
+}
+
+.btn {
+  background-color: #fd0606;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #fd0606;
+  transition: all 0.4s ease-out;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #fd0606;
+  border: 1px solid #fd0606;
 }
 </style>
